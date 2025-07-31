@@ -13,11 +13,15 @@ class calculadora:
             self.botao_num_gerador(m,(m-7)*17, 80)
         self.botao_num_gerador(0,51,40)
         for x in (43,45,42,47):
-            if x % 2 == 0:
+            if x == 43:
+                self.botao_num_gerador(chr(x),51,60)
+            elif x == 45:
+                self.botao_num_gerador(chr(x),51,80)
+            elif x == 42:
                 self.botao_num_gerador(chr(x),68,40)
             else:
-                self.botao_num_gerador(chr(x),51,80)
-            
+                self.botao_num_gerador(chr(x),68,60)
+       
         bi = ctk.CTkButton(self.janela, text='=', command=self.resultado, width=10, height=10).place(x=68,y=80)
         self.janela.mainloop()
     def adicionar_numero_na_conta(self, numero):
